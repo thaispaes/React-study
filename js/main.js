@@ -1,2 +1,11 @@
-document.querySelector('.tecla_pom');
+function playSong() {
+
+    document.querySelector('#som_tecla_pom').play();
+
+}
+
+
+//document.querySelector('.tecla_pom').onclick = playSong;
+
+
 
