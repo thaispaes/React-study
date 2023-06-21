@@ -4,6 +4,7 @@ function playSong() {
 
 }
 
+const listaDeTeclas = document.querySelectorAll('.tecla');
 
 //document.querySelector('.tecla_pom').onclick = playSong;
 
