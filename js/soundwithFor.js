@@ -1,6 +1,14 @@
-function playSong(idButtonMusica) {
+function playSong(selectorAudio) {
 
-    document.querySelector(idButtonMusica).play();
+   const elemento = document.querySelector(selectorAudio);
+
+   if (elemento === null) {
+        console.log("Elemento não encontrado!");
+   } else if (elemento && elemento.localName === 'audio') { //Não precisa do != null porque ele ja identifica se tem algo no elemento
+        elemento.play()
+   } else {
+        console.log("Elemento não encontrado ou Seletor inválido!");
+   }
 
 }
 
@@ -17,6 +25,18 @@ for (let cont = 0; cont < listaDeTeclas.length; cont++) {
     
     tecla.onclick = function () {
         playSong(idAudio);
+    }
+
+    tecla.onkeydown = function (eventPressed) {
+
+        if (eventPressed.code === 'Space' || eventPressed.code === 'Enter') {
+            tecla.classList.add('ativa');
+        }
+        
+    }
+
+    tecla.onkeyup = function () {
+        tecla.classList.remove('ativa');
     }
 }
 
